@@ -8,6 +8,9 @@
 // HASTA HACE POCO, TIENE SOPORTE NATIVO DE JS.
 import express, { response } from 'express';
 
+// importamos el router
+import router from './routes/index.js';
+
 // app contiene la funcion para ejecutar express
 const app = express();
 
@@ -16,33 +19,38 @@ const app = express();
 const port = process.env.PORT || 4000;
 // como está de forma local va a funcionar el 4000, pero si estas en deployment entonces, va a funcionar tu variable de entorno definida.
 
+// agregar router
+app.use('/', router);
+// use soporta get, post, put, delete
 
-app.get('/', (request, response) => {
-    // get es enviar una peticion a la url cuando visito la pagina
-    // / es decir a a pagina principal
-    // request -> lo que enviamos (Ejm: si lleno un formulario, aqui iria lo que lleno)
-    // response -> lo que express envia (Ejm: mandaste los datos del formulario correctamente)
-    // response.send; estaria creando mi propia resputa
-    // .send en un metodo para mostrar algo en pantalla
-    // .json: emite una respyesta json
-    // response.send('Hola Mundo');
-    // response.json({
-    //     id: 1
-    // })
-    // res.render(), el mas comun; se utiliza para mostrar una vista
-    // response.render()
-    response.send('Inicio');
-});
 
-// Creando otras pagina o url
-app.get('/nosotros', (request, response) => {
-    response.send('Nosotros');
-})
 
-// Pagina contacto
-app.get('/contacto', (request, response) => {
-    response.send('Contacto')
-})
+// app.get('/', (request, response) => {
+//     // get es enviar una peticion a la url cuando visito la pagina
+//     // / es decir a a pagina principal
+//     // request -> lo que enviamos (Ejm: si lleno un formulario, aqui iria lo que lleno)
+//     // response -> lo que express envia (Ejm: mandaste los datos del formulario correctamente)
+//     // response.send; estaria creando mi propia resputa
+//     // .send en un metodo para mostrar algo en pantalla
+//     // .json: emite una respyesta json
+//     // response.send('Hola Mundo');
+//     // response.json({
+//     //     id: 1
+//     // })
+//     // res.render(), el mas comun; se utiliza para mostrar una vista
+//     // response.render()
+//     response.send('Inicio');
+// });
+
+// // Creando otras pagina o url
+// app.get('/nosotros', (request, response) => {
+//     response.send('Nosotros');
+// })
+
+// // Pagina contacto
+// app.get('/contacto', (request, response) => {
+//     response.send('Contacto')
+// })
 
 
 
