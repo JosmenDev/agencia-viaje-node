@@ -4,8 +4,9 @@
   "description": "Primer Proyecto con Node.js",
   "main": "helloGit.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js"
   },
+  "type" : "module",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/JosmenDev/agencia-viaje-node.git"
