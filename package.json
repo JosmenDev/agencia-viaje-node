@@ -1,0 +1,22 @@
+{
+  "name": "proyecto-agencia",
+  "version": "1.0.0",
+  "description": "Primer Proyecto con Node.js",
+  "main": "helloGit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JosmenDev/agencia-viaje-node.git"
+  },
+  "author": "JosmenDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosmenDev/agencia-viaje-node/issues"
+  },
+  "homepage": "https://github.com/JosmenDev/agencia-viaje-node#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
