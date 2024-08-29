@@ -19,6 +19,11 @@ const app = express();
 const port = process.env.PORT || 4000;
 // como está de forma local va a funcionar el 4000, pero si estas en deployment entonces, va a funcionar tu variable de entorno definida.
 
+// habilitar pug
+app.set('view engine', 'pug');
+// view engine soporta express
+
+
 // agregar router
 app.use('/', router);
 // use soporta get, post, put, delete

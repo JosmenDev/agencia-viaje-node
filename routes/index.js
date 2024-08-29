@@ -9,18 +9,24 @@ const router = express.Router();
 
 // Pagina incio
 router.get('/', (request, response) => {
-    response.send('Inicio');
+    response.render('inicio');
 });
 
 // Pagina nosotros
 router.get('/nosotros', (request, response) => {
-    response.send('Nosotros');
+    const viajes = 'Cambiando el texto';
+
+    response.render('nosotros', {
+        viajes
+    });
+    // lo que hace ese render es buscar el archivo nosotros dentro del proyecto y lo muestra
+    // entre las llaves, puedo colocar toda la informacion que quieres mandar hacia la vista 'nosotros'
 })
 
 // Pagina contacto
-router.get('/contacto', (request, response) => {
-    response.send('Contacto')
-})
+// router.get('/contacto', (request, response) => {
+//     response.send('Contacto')
+// })
 
 // SE VAN A IR COLOCANDO ESTAS RUTAS DELROUTER DE EXPRESS Y DESPUES COLOCAREMOS EN LA APP DEL INDEX.JS PRINCIPAL
 
