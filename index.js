@@ -23,6 +23,10 @@ const port = process.env.PORT || 4000;
 app.set('view engine', 'pug');
 // view engine soporta express
 
+// Definir la carpeta publica
+app.use(express.static('public'));
+// Le digo que quiero usar la carpeta estatica public
+// de esta forma ya tiene acceso a esos archivos
 
 // agregar router
 app.use('/', router);
