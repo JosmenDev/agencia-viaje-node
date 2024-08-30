@@ -6,7 +6,7 @@
 // LA SINTAXIS NO SOPORTA EL REQUIRE
 // EXPRESS Y NODE LOS ADOPTARON ESTA SINTAXIS
 // HASTA HACE POCO, TIENE SOPORTE NATIVO DE JS.
-import express, { response } from 'express';
+import express from 'express';
 
 // importamos el router
 import router from './routes/index.js';

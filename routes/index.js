@@ -7,38 +7,22 @@ import express from 'express';
 // estamos usando la misma instancia de express, pero estamos usando su router
 const router = express.Router();
 
+// importamos los controladores
+import { paginaInicio, paginaNosotros, paginaViajes, paginaTestimoniales } from '../controllers/paginasController.js';
+
 // Pagina incio
-router.get('/', (request, response) => {
-    response.render('inicio', {
-        pagina: 'Inicio'
-    });
-});
+router.get('/', paginaInicio);
 
 // Pagina nosotros
-router.get('/nosotros', (request, response) => {
-    const viajes = 'Cambiando el texto';
-
-    response.render('nosotros', {
-        viajes,
-        pagina: 'Nosotros'
-    });
+router.get('/nosotros', paginaNosotros);
     // lo que hace ese render es buscar el archivo nosotros dentro del proyecto y lo muestra
     // entre las llaves, puedo colocar toda la informacion que quieres mandar hacia la vista 'nosotros'
-})
 
 // Pagina viajes
-router.get('/viajes', (request, response) =>{
-    response.render('viajes', {
-        pagina: 'Viajes'
-    })
-});
+router.get('/viajes', paginaViajes);
 
 // Pagina testimoniales
-router.get('/testimoniales', (request, response) => {
-    response.render('testimoniales', {
-        pagina: 'Testimoniales'
-    })
-});
+router.get('/testimoniales', paginaTestimoniales);
 
 
 
