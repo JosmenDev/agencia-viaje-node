@@ -11,9 +11,18 @@ import express, { response } from 'express';
 // importamos el router
 import router from './routes/index.js';
 
+// impirtamos la conexio
+import db from './config/db.js';
+
 // app contiene la funcion para ejecutar express
 const app = express();
 
+// conectar la bd
+db.authenticate()
+    .then (() => console.log('Base de datos conectada'))
+    .catch( error => console.log(error));
+
+    
 // Definir puerto
 // process.env.port -> variables de entorno, debido a que de forma local o en un servidor, las variables de entorno son distintas y con node ya la tenemos automaticas
 const port = process.env.PORT || 4000;

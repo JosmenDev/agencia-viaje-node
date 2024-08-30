@@ -19,7 +19,9 @@
   "homepage": "https://github.com/JosmenDev/agencia-viaje-node#readme",
   "dependencies": {
     "express": "^4.19.2",
-    "pug": "^3.0.3"
+    "mysql2": "^3.11.0",
+    "pug": "^3.0.3",
+    "sequelize": "^6.37.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
