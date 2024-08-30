@@ -19,13 +19,16 @@ const guardarTestimonial = async (request, response) => {
 
     if (errores.length > 0) {
         // nos dice si es que hay almenos un error
+        // consultar testimoniales
+        const testimoniales = await Testimonial.findAll();
         // mostrar la vista con errores
         response.render('testimoniales', {
             pagina: 'Testimoniales',
             errores,
             nombre,
             correo,
-            mensaje
+            mensaje,
+            testimoniales
         })
     } else {
         // almacenar en la BD

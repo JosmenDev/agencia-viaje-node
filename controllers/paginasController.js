@@ -1,4 +1,5 @@
 import { Viaje } from "../models/Viaje.js";
+import { Testimonial } from "../models/Testimonial.js";
 
 const paginaInicio = async (request, response) => {
     response.render('inicio', {
@@ -22,10 +23,17 @@ const paginaViajes = async (request, response) => {
     });
 }
 
-const paginaTestimoniales = (request, response) => {
-    response.render('testimoniales', {
-        pagina: 'Testimoniales'
-    });
+const paginaTestimoniales = async (request, response) => {
+    try {
+        const testimoniales = await Testimonial.findAll();
+        response.render('testimoniales', {
+            pagina: 'Testimoniales',
+            testimoniales
+        });
+    } catch (error) {
+        console.log(error);
+    }
+    
 }
 
 // Muestra un viaje por su slug
