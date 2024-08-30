@@ -4,7 +4,8 @@
   "description": "Primer Proyecto con Node.js",
   "main": "helloGit.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "type": "module",
   "repository": {
