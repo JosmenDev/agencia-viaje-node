@@ -7,9 +7,10 @@ html(lang="en")
         link(href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Staatliches&display=swap' rel='stylesheet')
         link(rel="stylesheet", href="/css/bootstrap.css")
         link(rel="stylesheet", href="/css/style.css")
-    body 
+    body( class = clase )
         include header
         //- pug utiliza bloques y uno defino sus propios bloques
+        block slider
         block contenido
 
         include footer
