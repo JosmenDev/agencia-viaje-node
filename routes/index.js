@@ -16,6 +16,10 @@ import {
     paginaDetalleViaje 
 } from '../controllers/paginasController.js';
 
+import { 
+    guardarTestimonial 
+} from '../controllers/testimonialController.js';
+
 // Pagina incio
 router.get('/', paginaInicio);
 
@@ -32,6 +36,9 @@ router.get('/viajes/:slug', paginaDetalleViaje);
 
 // Pagina testimoniales
 router.get('/testimoniales', paginaTestimoniales);
+
+// Leer los elementos del formulario
+router.post('/testimoniales', guardarTestimonial);
 
 
 

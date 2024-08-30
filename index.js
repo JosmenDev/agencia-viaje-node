@@ -41,6 +41,9 @@ app.use( (request, response, next) => {
     // next te permite ir al siguiente middleware
 })
 
+// Agregar body parser para leer datos del formulario
+app.use(express.urlencoded({extended: true}));
+
 // Definir la carpeta publica
 app.use(express.static('public'));
 // Le digo que quiero usar la carpeta estatica public
