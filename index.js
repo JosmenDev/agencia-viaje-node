@@ -23,6 +23,14 @@ const port = process.env.PORT || 4000;
 app.set('view engine', 'pug');
 // view engine soporta express
 
+// Crear el propio middleware, obtener el año actual
+app.use( (request, response, next) => {
+    const year = new Date();
+    response.locals.actualYear = year.getFullYear();
+    return next();
+    // next te permite ir al siguiente middleware
+})
+
 // Definir la carpeta publica
 app.use(express.static('public'));
 // Le digo que quiero usar la carpeta estatica public
@@ -32,6 +40,8 @@ app.use(express.static('public'));
 app.use('/', router);
 // use soporta get, post, put, delete
 
+
+// BAsicamente,cada linea que se ha ido ejecutando es una linea de middleware en express, cada una es una linea de midleware
 
 
 // app.get('/', (request, response) => {

@@ -9,7 +9,7 @@ const router = express.Router();
 
 // Pagina incio
 router.get('/', (request, response) => {
-    response.render('inicio');
+    response.send('Inicio');
 });
 
 // Pagina nosotros
