@@ -8,7 +8,13 @@ import express from 'express';
 const router = express.Router();
 
 // importamos los controladores
-import { paginaInicio, paginaNosotros, paginaViajes, paginaTestimoniales } from '../controllers/paginasController.js';
+import { 
+    paginaInicio, 
+    paginaNosotros, 
+    paginaViajes, 
+    paginaTestimoniales, 
+    paginaDetalleViaje 
+} from '../controllers/paginasController.js';
 
 // Pagina incio
 router.get('/', paginaInicio);
@@ -20,6 +26,9 @@ router.get('/nosotros', paginaNosotros);
 
 // Pagina viajes
 router.get('/viajes', paginaViajes);
+// Definimos las vistas o paginas del viaje seleccionado
+// se añade un comodin :comodin
+router.get('/viajes/:slug', paginaDetalleViaje);
 
 // Pagina testimoniales
 router.get('/testimoniales', paginaTestimoniales);

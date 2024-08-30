@@ -28,9 +28,31 @@ const paginaTestimoniales = (request, response) => {
     });
 }
 
+// Muestra un viaje por su slug
+const paginaDetalleViaje = async (request, response) => {
+    // response.render('viaje')
+    // console.log(request.params.viaje);
+    // viaje es el comodin que se definio en la ruta
+    const { slug } = request.params;
+    try {
+        const viaje = await Viaje.findOne({
+            where: { 
+                slug 
+            }
+        });
+        response.render('viaje', {
+            pagina: 'Información viaje',
+            viaje
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export {
     paginaInicio,
     paginaNosotros,
     paginaViajes,
-    paginaTestimoniales
+    paginaTestimoniales,
+    paginaDetalleViaje
 }
