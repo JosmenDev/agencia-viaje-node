@@ -1,7 +1,12 @@
 import Sequelize from 'sequelize'
 
-const db = new Sequelize('agenciaviajes', 'root', '', {
-    host: '127.0.0.1',
+// Importar dependencia del dotenv para las variables de entorno
+import dotenv from 'dotenv'
+// Llamar a las variables de entorno
+dotenv.config();
+
+const db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
+    host: process.env.DV_HOST,
     port: 3306,
     dialect: 'mysql',
     define: {
