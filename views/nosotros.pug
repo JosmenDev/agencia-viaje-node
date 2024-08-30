@@ -4,7 +4,29 @@ extends ./layout/index
 block contenido
     main.container.mt-5 
         .row 
-            h1= pagina
+            .col-md-5 
+                img(src="img/nosotros.jpg", alt="Imagen sobre nosotros", class="img-fluid")
+            .col-md-7
+                h1 #{pagina}
+                blockquote Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu est vulputate, ultrices mauris quis, malesuada odio. Vestibulum gravida, eros quis facilisis fringilla, arcu neque mollis nisi, a pulvinar ipsum ipsum sed velit. Nullam vel dolor lacinia, facilisis velit sit amet, auctor elit. Donec at ex finibus orci consectetur feugiat tempor non nunc. Proin vitae faucibus orci.
+                p Proin et lacus iaculis, imperdiet ipsum et, egestas mi. Integer pellentesque dolor sed risus pulvinar fringilla. Integer imperdiet blandit justo. Proin tellus sapien, sodales nec ipsum eu, varius interdum risus.
+                p Cras gravida semper sem nec convallis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla vestibulum eleifend condimentum. Etiam congue dolor sed tortor rhoncus auctor vitae eu ante. Suspendisse eu posuere risus, id semper justo. Suspendisse vitae condimentum nunc. Ut vitae tincidunt libero, sed auctor urna. 
+        
+    .listado-iconos 
+        .container.mt-5.py-5.text-center
+            .row 
+                .col-md-4 
+                    img(src="img/icono_seguridad.svg", alt="icono seguridad", class="img-fluid mb-4")
+                    h2.mb-4 Seguridad
+                    p Suspendisse eu posuere risus, id semper justo. Suspendisse vitae condimentum nunc. Ut vitae tincidunt libero, sed auctor urna.
+                .col-md-4 
+                    img(src="img/icono_destinos.svg", alt="icono destinos", class="img-fluid mb-4")
+                    h2.mb-4 Mejores Destinos
+                    p Suspendisse eu posuere risus, id semper justo. Suspendisse vitae condimentum nunc. Ut vitae tincidunt libero, sed auctor urna.
+                .col-md-4 
+                    img(src="img/icono_precios.svg", alt="icono precios", class="img-fluid mb-4")
+                    h2.mb-4 Los Mejores Precios
+                    p Suspendisse eu posuere risus, id semper justo. Suspendisse vitae condimentum nunc. Ut vitae tincidunt libero, sed auctor urna.
     //- p #{viajes} 
     //- img(src="img/cupon.jpg")
 //- cuando le pones igual, ya espera una variable del objeto que le estoy pasando
