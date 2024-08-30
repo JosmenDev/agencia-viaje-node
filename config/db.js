@@ -5,9 +5,7 @@ import dotenv from 'dotenv'
 // Llamar a las variables de entorno
 dotenv.config();
 
-const db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
-    host: process.env.DV_HOST,
-    port: 3306,
+const db = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'mysql',
     define: {
         timestamps: false
